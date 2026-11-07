@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>여행 일기</title>
+<style>
+:root { --bg: #faf7f1; --surface: #fff; --ink: #2e2a24; --muted: #7a7164; --line: #e6dfd2; --accent: #8f6f12; --on-accent: #fff; --warn: #a8501e; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #1c1a17; --surface: #262320; --ink: #ece6da; --muted: #a1988a; --line: #3a352e; --accent: #d8b447; --on-accent: #1c1a17; --warn: #e39a6a; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 16px; background: var(--bg); color: var(--ink); font: 16px/1.6 "Malgun Gothic", system-ui, sans-serif; }
+form { width: min(340px, 100%); padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+h1 { margin: 0 0 16px; font-size: 1.3rem; }
+label { display: grid; gap: 6px; }
+input { padding: 9px 11px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: inherit; font: inherit; }
+button { width: 100%; margin-top: 4px; padding: 9px; border: 0; border-radius: 6px; background: var(--accent); color: var(--on-accent); font: inherit; font-weight: 700; cursor: pointer; }
+button:disabled { opacity: .6; cursor: progress; }
+p { min-height: 1.6em; margin: 8px 0; color: var(--warn); font-size: .9rem; }
+</style>
+</head>
+<body>
+<form id="unlock" hidden>
+  <h1>여행 일기</h1>
+  <label>비밀번호
+    <input type="password" name="password" autocomplete="current-password" required>
+  </label>
+  <p id="message" role="alert"></p>
+  <button type="submit">열기</button>
+</form>
+<noscript>이 페이지를 보려면 JavaScript가 필요합니다.</noscript>
+<script src="../assets/lock.js"></script>
+</body>
+</html>
